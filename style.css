@@ -1,0 +1,111 @@
+main {
+  background-color: #f7ecde;
+  height: 100vh;
+  position: relative;
+}
+main h1 {
+  font-family: "Pacifico", cursive;
+  color: #352e28;
+  isolation: isolate;
+  position: relative;
+}
+main h1::before {
+  content: "";
+  width: 100%;
+  height: 25%;
+  background-color: #fec260;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  transition: height 0.5s ease;
+}
+main h1:hover::before {
+  height: 50%;
+  background-color: #fec260;
+}
+.dots::before {
+  content: "................................................................................................................................................................................................................................................................................................................................................................................";
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 2%;
+  color: black;
+  margin-top: 20px;
+}
+
+.bookmark h2{
+  font-family: "Righteous", cursive;
+    font-size: 25px;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.input button{
+color: #fff;
+background-color: #d1512d;
+cursor: pointer;
+}
+.input button:hover{
+  color: #fff;
+background-color: #b84728;
+cursor: pointer;
+}
+.table-container {
+  background-color: white;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: none;
+  margin: none;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+.table tr {
+  border-bottom: #fff;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+
+.dots-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}

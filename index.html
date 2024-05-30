@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Bookmark</title>
+</head>
+<body>
+  <main class="pt-3">
+    <div class="container flex-column d-flex justify-content-center align-items-center">
+      <h1 class="text-center mt-5 display-5">Bookmarker</h1>
+    </div>
+    <div class="dots"></div>
+    <div class="bookmark mt-3 d-flex justify-content-center align-items-center flex-column">
+      <h2>
+        <i class="fa-solid fa-bookmark"></i>
+        Bookmark your favorite sites
+        <i class="fa-solid fa-bookmark"></i>
+      </h2>
+    </div>
+    <div class="input w-75 mx-auto d-flex flex-column justify-content-center align-items-center text-capitalize">
+      <label for="siteName" class="w-75 text-black fw-bold">
+        <i class="fa-solid fa-book pe-2"></i>
+        Site Name
+      </label>
+      <input type="text" class="form-control mt-1 mb-3 w-75" placeholder="Site name" id="siteName" name="name">
+  
+
+      <label for="siteURL" class="w-75 text-black fw-bold">
+        <i class="fa-solid fa-link pe-2"></i>
+        Site URL
+      </label>
+      <input type="text" class="form-control mt-1 mb-3 w-75" placeholder="Site URL" id="siteURL" name="url">
+    
+
+      <button id="addBtn" class="btn btn-outline px-5 mt-2" type="submit" onclick="submit()">Submit</button>
+      <div class="dots"></div>
+    </div>
+
+    <!-- Validation Modal -->
+    <div id="validationModal" class="modal d-none">
+      <div class="modal-content bg-white p-4 position-relative">
+        <div class="dots-container">
+          <span class="dot bg-primary"></span>
+          <span class="dot bg-warning"></span>
+          <span class="dot bg-danger"></span>
+        </div>
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <p>Site Name or URL is not valid. Please follow the rules below:</p>
+        <ul>
+          <li><i class="fa-solid fa-info-circle"></i> Site name must start with a capital letter and contain at least 3 characters</li>
+          <li><i class="fa-solid fa-info-circle"></i> Site URL must be valid and contain '@'</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="table-container w-75 mx-auto mt-4 p-3 bg-white">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Website Name</th>
+            <th scope="col">Visit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="js/index.js"></script>
+</body>
+</html>
